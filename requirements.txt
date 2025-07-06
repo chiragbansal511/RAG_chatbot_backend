@@ -1,7 +1,3 @@
-flask
-langchain
-langchain-community
-chromadb
-llama-cpp-python
-scikit-learn
+Flask
+requests
 gunicorn
