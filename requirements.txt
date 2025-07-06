@@ -6,3 +6,4 @@ chromadb
 llama-cpp-python
 scikit-learn
 gunicorn
+gpt4all         
