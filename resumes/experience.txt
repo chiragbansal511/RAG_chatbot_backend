@@ -1,0 +1,29 @@
+# Professional Experience
+
+### **Arivvan**
+**Flutter Developer Intern** | _(September 2024 - December 2024)_
+
+*   Spearheading the end-to-end development of a cross-platform news summarization mobile application using Flutter, targeting both iOS and Android users.
+*   Integrating Appwrite for comprehensive backend services, including secure user authentication, real-time database management for news articles, and cloud functions for AI-powered text summarization.
+*   Implementing Firebase for push notifications to alert users of breaking news and for analytics to track user engagement and app performance.
+*   Collaborating closely with a UI/UX designer to translate wireframes into a responsive, intuitive, and visually appealing user interface.
+
+---
+
+### **Thapar ACT Department**
+**Full Stack Intern** | _(May 2024 - April 2025)_
+
+*   Engineered and launched the official department website **act.thapar.edu**, creating a central hub for information and improving accessibility for over 500 students and faculty members.
+*   Designed and built a full-stack research paper management system using the MERN stack (MongoDB, Express.js, React, Node.js), streamlining the submission, review, and publication process.
+*   Developed a secure RESTful API with Node.js and Express, featuring role-based access control for authors, reviewers, and administrators.
+*   This system is projected to reduce the average paper review cycle time by an estimated 40% and significantly decrease manual administrative overhead.
+
+---
+
+### **NotatMRP Innovation Pvt. Ltd.**
+**Full Stack Developer** | _(November 2023 - February 2024)_
+
+*   Contributed to a high-traffic e-commerce platform, focusing on both front-end and back-end feature development.
+*   Developed and maintained REST APIs using Node.js for managing products, user profiles, and order processing, integrating with a MongoDB database.
+*   Enhanced the user interface by building new, responsive components in React, which led to a measured 15% improvement in user session duration.
+*   Assisted in debugging and optimizing the React Native mobile application for both iOS and Android, resolving key performance bottlenecks and improving app stability.

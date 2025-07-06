@@ -1,0 +1,37 @@
+# Technical Skills
+
+### **Programming Languages**
+*   **Proficient:** JavaScript, Python, C++
+*   **Familiar:** C, Dart, SQL
+
+---
+
+### **Frameworks & Libraries**
+*   **Front-End:** React, HTML5, CSS3
+*   **Back-End:** Node.js, Express.js
+*   **Mobile:** Flutter, React Native
+*   **AI/ML:** Scikit-learn, TensorFlow (Basic), NLTK
+
+---
+
+### **Databases & BaaS (Backend-as-a-Service)**
+*   **NoSQL:** MongoDB
+*   **BaaS:** Firebase, Appwrite
+*   **Relational:** MySQL (Basic)
+
+---
+
+### **Tools & Technologies**
+*   **Version Control:** Git, GitHub
+*   **API & Sockets:** REST APIs, Socket.IO
+*   **Cloud & DevOps:** Vercel, Netlify, Docker (Basic)
+*   **Design Tools:** Figma, Canva
+
+---
+
+### **Soft Skills**
+*   Problem Solving & Critical Thinking
+*   Team Collaboration & Communication
+*   Agile Methodologies
+*   Project Management
+*   Adaptability & Quick Learning

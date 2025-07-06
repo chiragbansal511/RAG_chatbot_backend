@@ -1,0 +1,39 @@
+# Personal & Academic Projects
+
+### **Portfolio Website**
+*   **Description:** A dynamic personal website to showcase my skills, projects, experience, and contact information in a clean, professional layout.
+*   **Tech Stack:** JavaScript, CSS3, HTML5
+*   **Date:** November 2023
+*   **Links:** [Live Demo](https://portfolio-gilt-one-42.vercel.app/) | [GitHub Repository](https://github.com/chiragbansal511/Portfolio)
+
+---
+
+### **Expense Tracker**
+*   **Description:** A web application designed to help users manage their finances by tracking income and expenses. Implemented features for adding/deleting transactions, calculating balances, and visualizing data with charts.
+*   **Tech Stack:** React, JavaScript, CSS3, HTML5
+*   **Date:** October 2023
+*   **Links:** [GitHub Repository](https://github.com/chiragbansal511/Expense-Tracker)
+
+---
+
+### **WeatherApp**
+*   **Description:** Built a real-time weather application that fetches and displays current weather data based on user's city search. Integrated the OpenWeatherMap API for accurate, up-to-date information.
+*   **Tech Stack:** JavaScript, CSS3, HTML5, REST API
+*   **Date:** October 2023
+*   **Links:** [GitHub Repository](https://github.com/chiragbansal511/WeatherApp)
+
+---
+
+### **Food Ordering Site (UI/UX)**
+*   **Description:** Designed a responsive and modern front-end for a conceptual food ordering website. Focused on creating a clean, intuitive UI/UX for browsing menus, adding items to a cart, and simulating a checkout process.
+*   **Tech Stack:** JavaScript, CSS3, HTML5
+*   **Date:** September 2023
+*   **Links:** [GitHub Repository](https://github.com/chiragbansal511/Food-Ordering-site)
+
+---
+
+### **Netflix Clone (Front-End)**
+*   **Description:** Replicated the front-end user interface of the Netflix browse page to practice and demonstrate advanced CSS skills, including Flexbox and Grid layout, to create a pixel-perfect, responsive design.
+*   **Tech Stack:** CSS3, HTML5
+*   **Date:** November 2022
+*   **Links:** [GitHub Repository](https://github.com/chiragbansal511/Netflix-Clone)
