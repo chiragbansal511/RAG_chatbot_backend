@@ -1,73 +1,48 @@
-import os
-import json
 from flask import Flask, request, jsonify
-from pathlib import Path
-from langchain_community.llms import LlamaCpp
-from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
-from langchain.embeddings import GPT4AllEmbeddings
-from langchain.chains import RetrievalQA
+import requests
+import os
 
-# Flask app
 app = Flask(__name__)
 
-# Paths
-RESUME_DIR = "resumes"
-MODEL_PATH = "model/mistral-7b-instruct-v0.1.Q4_K_M.gguf"
+# Set your Together.ai API key here (or from env)
+TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY", "your_together_ai_api_key_here")
 
-# Auto-download model if not present
-model_url = "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf"
-if not os.path.exists(MODEL_PATH):
-    print("📥 Downloading Mistral model...")
-    os.makedirs("model", exist_ok=True)
-    import subprocess
-    subprocess.run(["wget", "-O", MODEL_PATH, model_url])
+# Endpoint: GET or POST /ask?query=your-question
+@app.route('/ask', methods=['GET', 'POST'])
+def ask():
+    if request.method == 'POST':
+        query = request.json.get('query', '')
+    else:
+        query = request.args.get('query', '')
 
-# Load documents
-def load_documents(data_dir=RESUME_DIR):
-    paths = Path(data_dir).glob("*.txt")
-    docs = []
-    for path in paths:
-        loader = TextLoader(str(path))
-        docs.extend(loader.load())
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-    return splitter.split_documents(docs)
+    if not query:
+        return jsonify({"error": "Query is required"}), 400
 
-# Create QA pipeline
-def create_qa_pipeline():
-    docs = load_documents()
-    embeddings = GPT4AllEmbeddings()
-    vectordb = Chroma.from_documents(docs, embeddings)
-    retriever = vectordb.as_retriever(search_kwargs={"k": 3})
-    llm = LlamaCpp(
-        model_path=MODEL_PATH,
-        temperature=0.6,
-        max_tokens=512,
-        top_p=0.95,
-        n_ctx=2048,
-        verbose=False,
-    )
-    qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever, return_source_documents=False)
-    return qa_chain
-
-print("🔄 Loading QA system (this may take a few seconds)...")
-qa_pipeline = create_qa_pipeline()
-print("✅ QA system ready!")
-
-# API route
-@app.route('/query', methods=['POST'])
-def query():
-    data = request.get_json()
-    user_query = data.get("query")
-    if not user_query:
-        return jsonify({"error": "Missing query"}), 400
+    # Call Together.ai API
     try:
-        answer = qa_pipeline.run(user_query)
-        return jsonify({"answer": answer.strip()})
+        response = requests.post(
+            "https://api.together.xyz/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {TOGETHER_API_KEY}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "mistralai/Mistral-7B-Instruct-v0.1",
+                "messages": [{"role": "user", "content": query}],
+                "max_tokens": 300,
+                "temperature": 0.7
+            }
+        )
+        data = response.json()
+        result = data["choices"][0]["message"]["content"]
+        return jsonify({"response": result.strip()})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# Run server
+# Health check
+@app.route('/')
+def index():
+    return "🟢 Together.ai Flask API is running!"
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
