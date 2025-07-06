@@ -1,12 +1,11 @@
 from flask import Flask, request, jsonify
 import os
 from pathlib import Path
-from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import GPT4AllEmbeddings
 from langchain_community.document_loaders import TextLoader
 import requests
-
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import GPT4AllEmbeddings
 # Flask app
 app = Flask(__name__)
 
