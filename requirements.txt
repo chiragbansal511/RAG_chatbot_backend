@@ -1,3 +1,8 @@
 Flask
 requests
+langchain
+langchain-community
+chromadb
+llama-cpp-python
+scikit-learn
 gunicorn
